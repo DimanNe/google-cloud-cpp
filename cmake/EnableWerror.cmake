@@ -59,10 +59,10 @@ function (google_cloud_cpp_add_common_options target)
     if (GOOGLE_CLOUD_CPP_COMPILER_SUPPORTS_WNO_SIGN_CONVERSION)
         target_compile_options(${target} PRIVATE "-Wno-sign-conversion")
     endif ()
-    if (GOOGLE_CLOUD_CPP_COMPILER_SUPPORTS_WERROR
-        AND GOOGLE_CLOUD_CPP_ENABLE_WERROR)
-        target_compile_options(${target} PRIVATE "-Werror")
-    endif ()
+#    if (GOOGLE_CLOUD_CPP_COMPILER_SUPPORTS_WERROR
+#        AND GOOGLE_CLOUD_CPP_ENABLE_WERROR)
+#        target_compile_options(${target} PRIVATE "-Werror")
+#    endif ()
     if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU"
         AND "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 5.0)
         # With GCC 4.x this warning is too noisy to be useful.

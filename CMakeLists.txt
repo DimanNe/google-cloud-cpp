@@ -216,7 +216,7 @@ mark_as_advanced(GOOGLE_CLOUD_CPP_ENABLE_GRPC)
 add_custom_target(google-cloud-cpp-protos)
 
 # Each subproject adds dependencies to this target to have their docs generated.
-add_custom_target(doxygen-docs)
+# add_custom_target(doxygen-docs)
 
 if (${GOOGLE_CLOUD_CPP_ENABLE_GRPC})
     add_subdirectory(external/googleapis)

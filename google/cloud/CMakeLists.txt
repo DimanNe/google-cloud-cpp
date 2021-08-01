@@ -14,7 +14,7 @@
 # limitations under the License.
 # ~~~
 
-find_package(absl CONFIG REQUIRED)
+# find_package(absl CONFIG REQUIRED)
 
 # Generate the version information from the CMake values.
 configure_file(internal/version_info.h.in
@@ -307,34 +307,34 @@ if (BUILD_TESTING)
 endif ()
 
 # Export the CMake targets to make it easy to create configuration files.
-install(
-    EXPORT google_cloud_cpp_common-targets
-    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/google_cloud_cpp_common"
-    COMPONENT google_cloud_cpp_development)
+#install(
+#    EXPORT google_cloud_cpp_common-targets
+#    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/google_cloud_cpp_common"
+#    COMPONENT google_cloud_cpp_development)
 
 # Install the libraries and headers in the locations determined by
 # GNUInstallDirs
-install(
-    TARGETS google_cloud_cpp_common
-    EXPORT google_cloud_cpp_common-targets
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-            COMPONENT google_cloud_cpp_runtime
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-            COMPONENT google_cloud_cpp_runtime
-            NAMELINK_SKIP
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-            COMPONENT google_cloud_cpp_development)
+#install(
+#    TARGETS google_cloud_cpp_common
+#    EXPORT google_cloud_cpp_common-targets
+#    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+#            COMPONENT google_cloud_cpp_runtime
+#    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#            COMPONENT google_cloud_cpp_runtime
+#            NAMELINK_SKIP
+#    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#            COMPONENT google_cloud_cpp_development)
 # With CMake-3.12 and higher we could avoid this separate command (and the
 # duplication).
-install(
-    TARGETS google_cloud_cpp_common
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-            COMPONENT google_cloud_cpp_development
-            NAMELINK_ONLY
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-            COMPONENT google_cloud_cpp_development)
+#install(
+#    TARGETS google_cloud_cpp_common
+#    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#            COMPONENT google_cloud_cpp_development
+#            NAMELINK_ONLY
+#    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#            COMPONENT google_cloud_cpp_development)
 
-google_cloud_cpp_install_headers(google_cloud_cpp_common include/google/cloud)
+#google_cloud_cpp_install_headers(google_cloud_cpp_common include/google/cloud)
 
 # Setup global variables used in the following *.in files.
 set(GOOGLE_CLOUD_CPP_PC_NAME
@@ -348,10 +348,10 @@ string(CONCAT GOOGLE_CLOUD_CPP_PC_REQUIRES "absl_any absl_flat_hash_map"
 # Create and install the pkg-config files.
 configure_file("${PROJECT_SOURCE_DIR}/google/cloud/config.pc.in"
                "google_cloud_cpp_common.pc" @ONLY)
-install(
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/google_cloud_cpp_common.pc"
-    DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
-    COMPONENT google_cloud_cpp_development)
+#install(
+#    FILES "${CMAKE_CURRENT_BINARY_DIR}/google_cloud_cpp_common.pc"
+#    DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
+#    COMPONENT google_cloud_cpp_development)
 
 # Create and install the CMake configuration files.
 include(CMakePackageConfigHelpers)
@@ -361,12 +361,12 @@ write_basic_package_version_file(
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY ExactVersion)
 
-install(
-    FILES
-        "${CMAKE_CURRENT_BINARY_DIR}/google_cloud_cpp_common-config.cmake"
-        "${CMAKE_CURRENT_BINARY_DIR}/google_cloud_cpp_common-config-version.cmake"
-    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/google_cloud_cpp_common"
-    COMPONENT google_cloud_cpp_development)
+#install(
+#    FILES
+#        "${CMAKE_CURRENT_BINARY_DIR}/google_cloud_cpp_common-config.cmake"
+#        "${CMAKE_CURRENT_BINARY_DIR}/google_cloud_cpp_common-config-version.cmake"
+#    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/google_cloud_cpp_common"
+#    COMPONENT google_cloud_cpp_development)
 
 if (GOOGLE_CLOUD_CPP_ENABLE_GRPC)
     find_package(gRPC)
