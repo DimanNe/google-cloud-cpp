@@ -267,7 +267,6 @@ target_link_libraries(
            OpenSSL::Crypto
            ZLIB::ZLIB)
 google_cloud_cpp_add_common_options(google_cloud_cpp_storage)
-message("google_cloud_cpp_storage PROJECT_SOURCE_DIR: ${PROJECT_SOURCE_DIR}")
 target_include_directories(
     google_cloud_cpp_storage PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
                                     $<INSTALL_INTERFACE:include>)
