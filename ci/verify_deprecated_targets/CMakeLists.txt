@@ -17,7 +17,7 @@
 cmake_minimum_required(VERSION 3.6)
 project(verify-exported-targets CXX C)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # CMake can use pkg-config to find dependencies. We recommend using CMake

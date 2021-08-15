@@ -20,7 +20,7 @@ project(google-cloud-cpp-spanner-quickstart CXX C)
 
 # In this example we only require C++11, you can use newer versions in your own
 # project:
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(google_cloud_cpp_spanner REQUIRED)

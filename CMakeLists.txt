@@ -35,7 +35,7 @@ set(GOOGLE_CLOUD_CPP_CXX_STANDARD
 mark_as_advanced(GOOGLE_CLOUD_CPP_CXX_STANDARD)
 
 set(CMAKE_CXX_STANDARD
-    11
+    17
     CACHE STRING "Configure the C++ standard version for all targets.")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
