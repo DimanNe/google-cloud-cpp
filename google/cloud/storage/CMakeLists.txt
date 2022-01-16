@@ -51,7 +51,7 @@ include(CreateBazelConfig)
 include(CTest)
 
 include(FindCurlWithTargets)
-find_package(OpenSSL REQUIRED)
+# find_package(OpenSSL REQUIRED)
 find_package(ZLIB REQUIRED)
 
 # the client library
